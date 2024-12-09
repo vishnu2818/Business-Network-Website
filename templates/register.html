@@ -1,0 +1,113 @@
+<!--Django form Html code-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Register</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Company Registration</h1>-->
+<!--<form method="POST" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--    {{form.as_p}}-->
+<!--    <button type="submit">Register</button>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link href="{% static '/static_home/css/register.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Responsive Registration Form </title>
+</head>
+<body>
+<div class="container">
+    <div id="header">
+        <header>Registration</header>
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+        <!--        <div class="form first">-->
+        <div class="registration">
+            <div class="fields">
+                {% csrf_token %}
+
+                <div class="input-field">
+                    <label for="company_name">Company Name</label>
+                    <input type="text" id="company_name" name="company_name" placeholder="Enter your company name"
+                           required>
+                </div>
+
+                <div class="input-field">
+                    <label for="company_description">Company Description</label>
+                    <textarea id="company_description" name="company_description"
+                              placeholder="Enter your company description" rows="4"></textarea>
+                </div>
+
+                <div class="input-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter a password" required>
+                </div>
+
+                <div class="input-field">
+                    <label for="logo">Company Logo</label>
+                    <input type="file" id="logo" name="logo" accept="image/*" required>
+                </div>
+
+                <div class="input-field">
+                    <label for="banner_image">Company Banner</label>
+                    <input type="file" id="banner_image" name="banner_image" accept="image/*" required>
+                </div>
+
+                <div class="input-field">
+                    <label for="linkedin_url">LinkedIn URL</label>
+                    <input type="url" id="linkedin_url" name="linkedin_url" placeholder="Enter your LinkedIn URL">
+                </div>
+
+                <div class="input-field">
+                    <label for="facebook_url">Facebook URL</label>
+                    <input type="url" id="facebook_url" name="facebook_url" placeholder="Enter your Facebook URL">
+                </div>
+
+                <div class="input-field">
+                    <label for="instagram_url">Instagram URL</label>
+                    <input type="url" id="instagram_url" name="instagram_url"
+                           placeholder="Enter your Instagram URL">
+                </div>
+
+                <div class="input-field">
+                    <label for="youtube_url">YouTube URL</label>
+                    <input type="url" id="youtube_url" name="youtube_url" placeholder="Enter your YouTube URL">
+                </div>
+
+            </div>
+
+            <div id="button">
+                <button type="submit" class="submit">
+                    <span clasas="btnText">Submit</span>
+                    <i class="uil uil-navigator"></i>
+                </button>
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+<script src="{% static 'static_home/js/script.js' %}"></script>
+</body>
+</html>
